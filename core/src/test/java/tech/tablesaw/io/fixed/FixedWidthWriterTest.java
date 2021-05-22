@@ -4,6 +4,7 @@ import static java.lang.Double.NaN;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.univocity.parsers.fixed.FixedWidthFields;
+import com.univocity.parsers.fixed.FixedWidthWriterSettings;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,6 +21,7 @@ public class FixedWidthWriterTest {
   private Table table =
       Table.create("t", DoubleColumn.create("v1", v1), DoubleColumn.create("v2", v2));
 
+  // CS304 (manually written) Issue link: https://github.com/jtablesaw/tablesaw/issues/942
   @Test
   public void testOutputInFixedWidthFormat() {
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -181,5 +183,31 @@ public class FixedWidthWriterTest {
     } catch (Exception e) {
       fail(e);
     }
+  }
+
+  // CS304 (manually written) Issue link: https://github.com/jtablesaw/tablesaw/issues/942
+  @Test
+  public void testFixedWidthWriterSettings1() {
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    FixedWidthFields fwf = new FixedWidthFields(10, 10);
+    FixedWidthWriteOptions options =
+        new FixedWidthWriteOptions.Builder(baos).columnSpecs(fwf).build();
+    FixedWidthWriter fww = new FixedWidthWriter();
+    FixedWidthWriterSettings fwws = fww.fixedWidthWriterSettings(options);
+    FixedWidthWriterSettings result = new FixedWidthWriterSettings(fwf);
+
+    assertEquals(fwws.toString(), result.toString());
+  }
+
+  // CS304 (manually written) Issue link: https://github.com/jtablesaw/tablesaw/issues/942
+  @Test
+  public void testFixedWidthWriterSettings2() {
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    FixedWidthWriteOptions options = new FixedWidthWriteOptions.Builder(baos).build();
+    FixedWidthWriter fww = new FixedWidthWriter();
+    FixedWidthWriterSettings fwws = fww.fixedWidthWriterSettings(options);
+    FixedWidthWriterSettings result = new FixedWidthWriterSettings();
+
+    assertEquals(fwws.toString(), result.toString());
   }
 }

@@ -38,6 +38,13 @@ public final class FixedWidthWriter implements DataWriter<FixedWidthWriteOptions
     registry.registerOptions(FixedWidthWriteOptions.class, INSTANCE);
   }
 
+  /**
+   * Output the table according to the options CS304 Issue link:
+   * https://github.com/jtablesaw/tablesaw/issues/942
+   *
+   * @param table the table to be outputted
+   * @param options options about output (e.g., output destination, output format)
+   */
   public void write(Table table, FixedWidthWriteOptions options) {
     FixedWidthWriterSettings settings = fixedWidthWriterSettings(options);
     settings.setFormat(fixedWidthFormat(options));
@@ -95,6 +102,13 @@ public final class FixedWidthWriter implements DataWriter<FixedWidthWriteOptions
     return format;
   }
 
+  /**
+   * Construct FixedWidthWriterSettings with FixedWidthWriteOptions CS304 Issue link:
+   * https://github.com/jtablesaw/tablesaw/issues/942
+   *
+   * @param options the options that user set
+   * @return FixedWidthWriterSettings contain options about Fixed Width
+   */
   protected FixedWidthWriterSettings fixedWidthWriterSettings(FixedWidthWriteOptions options) {
     FixedWidthWriterSettings settings = new FixedWidthWriterSettings();
     if (options.columnSpecs() != null) {
