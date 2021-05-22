@@ -42,6 +42,7 @@ public class DataFrameWriterTest {
         output);
   }
 
+  // CS304 (manually written) Issue link: https://github.com/jtablesaw/tablesaw/issues/750
   @Test
   public void testFileOutputStreamWhetherClose() throws IOException {
     // Create directory if it doesn't exist
@@ -87,6 +88,7 @@ public class DataFrameWriterTest {
     }
   }
 
+  // CS304 (manually written) Issue link: https://github.com/jtablesaw/tablesaw/issues/750
   @Test
   public void testOutputStreamWriterWhetherClose() {
     ByteArrayOutputStream baos = new ByteArrayOutputStream();

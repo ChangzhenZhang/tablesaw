@@ -41,6 +41,13 @@ public final class CsvWriter implements DataWriter<CsvWriteOptions> {
     registry.registerOptions(CsvWriteOptions.class, INSTANCE);
   }
 
+  /**
+   * Output the table according to the options CS304 Issue link:
+   * https://github.com/jtablesaw/tablesaw/issues/750
+   *
+   * @param table the table to be outputted
+   * @param options output options
+   */
   public void write(Table table, CsvWriteOptions options) {
     CsvWriterSettings settings = createSettings(options);
 

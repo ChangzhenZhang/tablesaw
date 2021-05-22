@@ -49,6 +49,7 @@ public class FixedWidthWriterTest {
         output);
   }
 
+  // CS304 (manually written) Issue link: https://github.com/jtablesaw/tablesaw/issues/750
   @Test
   public void testFileOutputStreamWhetherClose() throws IOException {
     // Create directory if it doesn't exist
@@ -127,6 +128,7 @@ public class FixedWidthWriterTest {
     }
   }
 
+  // CS304 (manually written) Issue link: https://github.com/jtablesaw/tablesaw/issues/750
   @Test
   public void testOutputStreamWriterWhetherClose() throws IOException {
     ByteArrayOutputStream baos = new ByteArrayOutputStream();

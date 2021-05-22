@@ -8,8 +8,14 @@ import java.io.Writer;
 public class WriteOptions {
 
   protected final Destination dest;
+  // CS304 Issue link: https://github.com/jtablesaw/tablesaw/issues/750
   protected final boolean autoClose;
 
+  /**
+   * Construct WriteOptions CS304 Issue link: https://github.com/jtablesaw/tablesaw/issues/750
+   *
+   * @param builder WriteOptions.Builder
+   */
   protected WriteOptions(Builder builder) {
     this.dest = builder.dest;
     this.autoClose = builder.autoClose;
@@ -36,6 +42,13 @@ public class WriteOptions {
       this.dest = new Destination(dest);
     }
 
+    /**
+     * Construct WriteOptions.Builder with File CS304 Issue link:
+     * https://github.com/jtablesaw/tablesaw/issues/750
+     *
+     * @param dest Output Destination
+     * @throws IOException threw by new Destination(File file)
+     */
     protected Builder(File dest) throws IOException {
       this.dest = new Destination(dest);
       this.autoClose = true;

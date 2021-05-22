@@ -90,6 +90,12 @@ public class CsvWriteOptions extends WriteOptions {
     return dateFormatter;
   }
 
+  /**
+   * get CsvWriteOptions.autoclose CS304 Issue link:
+   * https://github.com/jtablesaw/tablesaw/issues/750
+   *
+   * @return CsvWriteOptions.autoclose
+   */
   public boolean autoClose() {
     return autoClose;
   }

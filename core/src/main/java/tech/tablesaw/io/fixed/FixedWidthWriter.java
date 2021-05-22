@@ -40,7 +40,7 @@ public final class FixedWidthWriter implements DataWriter<FixedWidthWriteOptions
 
   /**
    * Output the table according to the options CS304 Issue link:
-   * https://github.com/jtablesaw/tablesaw/issues/942
+   * https://github.com/jtablesaw/tablesaw/issues/750
    *
    * @param table the table to be outputted
    * @param options options about output (e.g., output destination, output format)

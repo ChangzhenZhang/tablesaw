@@ -142,6 +142,12 @@ public class FixedWidthWriteOptions extends WriteOptions {
     return normalizedNewline;
   }
 
+  /**
+   * get FixedWidthWriteOptions.autoClose CS304 Issue link:
+   * https://github.com/jtablesaw/tablesaw/issues/750
+   *
+   * @return FixedWidthWriteOptions.autoClose
+   */
   public boolean autoClose() {
     return autoClose;
   }
